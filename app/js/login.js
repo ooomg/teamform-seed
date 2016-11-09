@@ -1,12 +1,5 @@
 // from http://blog.stackhive.com/post/114386894969/login-sign-up-and-a-real-time-app-using-firebase
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 /*
->>>>>>> 3ee1c345a80342646ee1721ac1d7448df73322eb
-=======
-/*
->>>>>>> 3ee1c345a80342646ee1721ac1d7448df73322eb
 var firebaseref = new Firebase("https://project-5db83.firebaseio.com")
 
 $("#login-btn").on('click', function()
@@ -57,11 +50,6 @@ var authDataCallback = function(authData)
 
 //register a callback for the change in Authentication Status
 firebaseref.onAuth(authDataCallback);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3ee1c345a80342646ee1721ac1d7448df73322eb
 */
   function toggleSignIn() {
       if (firebase.auth().currentUser) {
@@ -273,7 +261,3 @@ firebaseref.onAuth(authDataCallback);
     window.onload = function() {
       initApp();
     };
-<<<<<<< HEAD
->>>>>>> 3ee1c345a80342646ee1721ac1d7448df73322eb
-=======
->>>>>>> 3ee1c345a80342646ee1721ac1d7448df73322eb
