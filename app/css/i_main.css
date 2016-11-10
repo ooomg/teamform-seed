@@ -240,7 +240,7 @@ a:hover, a:focus {
     padding-top: 8px;
     position: fixed;
     top: -60px;
-    transition: top 0.4s ease 0s;
+    transition: top 0.6s ease 0s;
 }
 
 .navbar.open {
@@ -248,7 +248,7 @@ a:hover, a:focus {
 }
 
 .navbar-inverse .navbar-nav > li > a, .navbar-nav a {
-    color: #ffffff;
+    color: #778899;
     font-size: 14px;
     letter-spacing: 1px;
 }
@@ -476,7 +476,7 @@ footer {
   transition: all 0.25s ease-in-out;
 }
 .pricing-table.active {
-  box-shadow: 0px 0px 12px rgba(41,46,50,0.6); 
+  box-shadow: 0px 0px 12px rgba(41,46,50,0.6);
   position: absolute;
   margin: auto;
   z-index: 200;
@@ -604,6 +604,73 @@ footer {
     opacity: 1;
 }
 
+/*
+  the login dropdown css
+  from http://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form
+*/
+
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:10px
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .social-buttons{
+    margin:12px 0
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+h2.form-signin-heading {
+  font-size: 40px;
+  line-height: 40px;
+  etter-spacing: -0.5px;
+  color: #000000;
+  font-weight: 700;
+}
+
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
 
 
 
@@ -611,7 +678,7 @@ footer {
    Mobile styles
    ========================================================================== */
 /* Landscape phones and down */
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 
 .btn-lg {
   font-size: 12.5px;
@@ -629,7 +696,7 @@ footer {
   letter-spacing: 0px;
 }
 
-#be-the-first { 
+#be-the-first {
       background-attachment: scroll;
   }
 
@@ -637,9 +704,9 @@ footer {
 
 
 /* Landscape phone to portrait tablet */
-@media (min-width: 481px) and (max-width: 767px) { 
+@media (min-width: 481px) and (max-width: 767px) {
 
-#be-the-first { 
+#be-the-first {
       background-attachment: scroll;
   }
 
@@ -649,10 +716,10 @@ footer {
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 991px) {
 
-#be-the-first { 
+#be-the-first {
       background-attachment: scroll;
   }
-  
+
 }
 
 
@@ -661,15 +728,10 @@ footer {
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }
-     
+
 
 
 /* Large screens ----------- */
 @media (min-width: 1200px) and (max-width: 3000px) {
 
-}   
-
-
-
-
-
+}
