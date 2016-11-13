@@ -247,7 +247,7 @@ a:hover, a:focus {
     top: 0;
 }
 
-#forgetPw 
+#forgetPw
 {
   color: #778899;
 }
@@ -375,7 +375,7 @@ header {
 
 
 #tutorial {
-  background: url(../img/be-the-first-bg.jpg) #231f20 no-repeat center center fixed;
+  background: url(../img/image.jpg) #231f20 no-repeat center center fixed;
   min-height: 300px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -613,6 +613,7 @@ footer {
   the login dropdown css
   from http://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form
 */
+
 
 
 #login-dp{
