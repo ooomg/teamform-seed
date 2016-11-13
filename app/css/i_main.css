@@ -247,8 +247,13 @@ a:hover, a:focus {
     top: 0;
 }
 
+#forgetPw
+{
+  color: #778899;
+}
+
 .navbar-inverse .navbar-nav > li > a, .navbar-nav a {
-    color: #778899;
+    color: #ffffff;
     font-size: 14px;
     letter-spacing: 1px;
 }
@@ -370,7 +375,7 @@ header {
 
 
 #tutorial {
-  background: url(../img/be-the-first-bg.jpg) #231f20 no-repeat center center fixed;
+  background: url(../img/image.jpg) #231f20 no-repeat center center fixed;
   min-height: 300px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -610,6 +615,7 @@ footer {
 */
 
 
+
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -617,7 +623,7 @@ footer {
     background-color:rgba(255,255,255,.8);
 }
 #login-dp .help-block{
-    font-size:10px
+    font-size:12px
 }
 #login-dp .bottom{
     background-color:rgba(255,255,255,.8);
