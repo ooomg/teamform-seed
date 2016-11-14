@@ -8,6 +8,7 @@
   };
   firebase.initializeApp(config);
 
+
   //menu login section
   var menu_email = document.getElementById('menu_email');
   var menu_password = document.getElementById('menu_password');
@@ -17,17 +18,14 @@
   var txtName = document.getElementById('txtName');
   var txtEmail = document.getElementById('txtEmail');
   var txtPassword = document.getElementById('txtPassword');
-  var btnLogin = document.getElementById('btnLogin');
   var btnSignup = document.getElementById('btnSignUp');
 
-  btnLogin.addEventListener('click', e=>{
-
-    var email = txtEmail.value;
-    var password = txtPassword.value;
-    var auth = firebase.auth();
-
-
-  });
+  menu_btnlogin.addEventListener('click', e=>{
+  var email = menu_email.value;
+  var password = menu_password.value;
+  var auth = firebase.auth();
+  auth.signInWithEmailAndPassword(email,password);
+});
 
 
   //sign up event
@@ -36,9 +34,11 @@
     var email = txtEmail.value;
     var password = txtPassword.value;
     var name = txtName.value;
+
+    console.log('email');
+    console.log('name');
     var auth = firebase.auth();
     auth.createUserWithEmailAndPassword(email,password);
-    console.log('haha');
 
     //TODO: get user uid, then create the profile of the users
     //idk how to get the uid after call the funtion: createUserWithEmailAndPassword()
