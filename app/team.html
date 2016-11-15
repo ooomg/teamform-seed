@@ -119,8 +119,8 @@
             </div>
             <div class="col-md-4 col-xs-4 text-left">
               <h3>All teams:</h3>
-              <ul ng-repeat="t in team">
-                <li>
+              <ul class="list-group" ng-repeat="t in team">
+                <li class="list-group-item list-group-item-info">
                   User ID: {{t.$id}}  <br>
                   Preferred team size: <span class="badge">{{t.size}}</span> <br>
                   Current team members: {{t.teamMembers}}
