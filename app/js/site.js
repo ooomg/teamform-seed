@@ -45,6 +45,6 @@ function initalizeFirebase() {
 // For 3-way sync, use $firebaseObject or $firebaseArray provided by AngularFire
 //
 
-function retrieveOnceFirebase(firebase, refPath, callbackFunc) {
+/*function retrieveOnceFirebase(firebase, refPath, callbackFunc) {
 	firebase.database().ref(refPath).once("value").then(callbackFunc);
-}
+}*/
