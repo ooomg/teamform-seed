@@ -26,18 +26,12 @@ describe('Test admin.js', function(){
   });
 */
 //  describe('test', function (){
-/*	it('test paramLoaded', function() {
+	it('test paramLoaded', function() {
 		$scope.param={};
-		initalizeFirebase();
-		var refPath, ref, eventName; 
-		eventName = getURLParameter("q");
-		refPath = eventName + "/admin/param";
-		ref = firebase.database().ref(refPath)
-
-		$scope.param=$firebase(ref);
-		$scope.param.$loaded().then(data);
+		$scope.paramLdMess();
+		expect($scope.paramMess).toEqual("NoMax NoMin ");
 	});
-*/
+
 
     it('test changeMinTeamSize function',function(){
       admin_ready();
