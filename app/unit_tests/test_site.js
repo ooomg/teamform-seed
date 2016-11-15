@@ -14,17 +14,26 @@ describe('Test site.js', function() {
   });
 
   describe('getURLParameter testing',function(){
-    var name = getURLParameter('google');
-
+    it('getURL',function(){
+      var name = getURLParameter('google');
+      expect(name).toEqual(decodeURIComponent((new RegExp('[?|&]google' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null);
+    });  
   });
 
   describe('initalizeFirebase testing',function(){
-    initalizeFirebase();
+    it('ini firebase',function(){
+      var frbas= new initalizeFirebase();
+      expect(frbas).toBeDefined();
+    });
   });
 
 
-   describe('retrieveOnceFirebase testing',function(){
-  	 retrieveOnceFirebase();
+  /* describe('retrieveOnceFirebase testing',function(){
+  	 it('retriveonce', function(){
+  	 	var fb="fb"; var ref="app/long"; var callbk="abc";
+  	 	var val=retrieveOnceFirebase(fb,ref,callbk);
+  	    expect(retrieveOnceFirebase(fb,ref,callbk)).toBeDefined();
+  	 });
    });
-
+*/
 });
