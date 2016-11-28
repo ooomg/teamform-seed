@@ -76,15 +76,14 @@ angular.module("indx-app", ["firebase", "ngMaterial"])
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
     });
-
     // logout function
     $scope.logout = function() {
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
-            console.log('signed out');
+            console.log('sign-out successful');
         }, function(error) {
             // An error happened.
-            console.log('error when sign-out');
+            console.log('sign-out error');
         });
     };
 
@@ -100,6 +99,10 @@ angular.module("indx-app", ["firebase", "ngMaterial"])
             var userObj = $firebaseObject(userRef);
 
             userRef.update({name: user.displayName});
+
+ //           if(user.skills==undefined){
+                userRef.update({skills: "dummy"});
+//            }
 
             // refresh the scope
             $scope.$apply(function() {
@@ -123,7 +126,6 @@ angular.module("indx-app", ["firebase", "ngMaterial"])
     var eventObj = $firebaseObject(eventRef);
     eventObj.$bindTo($scope, "events");
 
-
     // create new event function
     $scope.createEvent = function() {
         var eventNameInput = $mdDialog.prompt()
@@ -133,35 +135,34 @@ angular.module("indx-app", ["firebase", "ngMaterial"])
 
         $mdDialog.show(eventNameInput)
             .then(function(event) {
-                $window.open("admin.html?q=" + event, "_self");
+                $window.open("admin.html?event=" + event, "_self");
             });
     };
 
 
-    // join event function
+     // join event function
     $scope.joinEvent = function(eventName) {
         var userProfileRef = firebase.database().ref().child("users").child($scope.user.uid);
         var userProfileObj = $firebaseObject(userProfileRef);
+        window.alert("Joining "+eventName);
 
         userProfileObj.$loaded().then(function(userProfile) {
             // add the event to the user's profile
             var userEventsRef = firebase.database().ref().child("users").child($scope.user.uid).child("events").child(eventName);
-
             userEventsRef.update({team: ""});
-
 
             var member = {};
             member[$scope.user.uid] = {name: $scope.user.displayName, skills: userProfile.skills};
-
+//window.alert("setting member");
             var eventMemberRef = firebase.database().ref().child("events").child(eventName).child("member");
-            var eventMemberObj = $firebaseObject(eventMemberRef);
-
             eventMemberRef.update(member);
+
+            window.alert("Joined "+eventName);
         });
     };
 })
 .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
     .primaryPalette('blue')
-    .accentPalette('indigo');
+    .accentPalette('pink');
 });

@@ -2,11 +2,15 @@ var team_ready = function(){
 
 	$('#team_page_controller').hide();
 	$('#text_event_name').text("Error: Invalid event name ");
-	var eventName = getURLParameter("q");
+	var eventName = getURLParameter("event");
+    var teamName = getURLParameter("team");
 	if (eventName != null && eventName !== '' ) {
 		$('#text_event_name').text("Event name: " + eventName);
 
 	}
+    if (eventName != null && eventName !== '' ) {
+        $('#text_team_name').text("Team name: " + teamName);
+    }
 };
 
 
