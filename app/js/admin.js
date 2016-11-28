@@ -2,7 +2,7 @@
 var admin_ready = function(){
 
 	$('#admin_page_controller').hide();
-	var eventName = getURLParameter("q");
+	var eventName = getURLParameter("event");
 	$('#text_event_name').text("Event name: " + eventName);
 	if(eventName == null || eventName.trim() == ""){
 		$('#text_event_name').text("Error: Invalid event name ");
@@ -23,7 +23,7 @@ angular.module("teamform-admin-app", ["firebase", "ngMaterial", "ngMessages"])
     // Call Firebase initialization code defined in site.js
     initializeFirebase();
     var refPath, ref, eventName;
-    eventName = getURLParameter("q");
+    eventName = getURLParameter("event");
     if (eventName === null) {
         eventName = "test";
     }
@@ -31,22 +31,25 @@ angular.module("teamform-admin-app", ["firebase", "ngMaterial", "ngMessages"])
     ref = firebase.database().ref("events/" + refPath);
     // Link and sync a firebase object
     $scope.param = $firebaseObject(ref);
-    $scope.param.$loaded()
-        .then(function(data) {
+    $scope.paramMess="";
+    $scope.paramLdMess=function(){
+//  $scope.param.$loaded()
+//      .then(function(data) {
+
             // Fill in some initial values when the DB entry doesn't exist
-            if (typeof $scope.param.maxTeamSize == "undefined") {
+            if(typeof $scope.param.maxTeamSize == "undefined"){
                 $scope.param.maxTeamSize = 10;
+                $scope.paramMess+="NoMax "
             }
-            if (typeof $scope.param.minTeamSize == "undefined") {
+            if(typeof $scope.param.minTeamSize == "undefined"){
                 $scope.param.minTeamSize = 1;
+                $scope.paramMess+="NoMin "
             }
+
             // Enable the UI when the data is successfully loaded and synchornized
             $('#admin_page_controller').show();
-        })
-        .catch(function(error) {
-            // Database connection error handling...
-            //console.error("Error:", error);
-        });
+        };
+        $scope.param.$loaded().then($scope.paramLdMess);
     refPath = eventName + "/team";
     $scope.team = [];
     $scope.team = $firebaseArray(firebase.database().ref("events/" + refPath));

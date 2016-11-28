@@ -81,10 +81,10 @@ angular.module("indx-app", ["firebase", "ngMaterial"])
     $scope.logout = function() {
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
-            console.log('sign-out successful');
+            console.log('signed out');
         }, function(error) {
             // An error happened.
-            console.log('sign-out error');
+            console.log('error when sign-out');
         });
     };
 
